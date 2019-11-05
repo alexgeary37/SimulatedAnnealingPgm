@@ -356,7 +356,7 @@ class Fbx<T> {
             name = n;
             value = v;
             if (name.compareTo("Actual memory") == 0) {
-                actualMemory = (int) v;
+                actualMemory = (double) v;
             }
         }
     }
