@@ -335,12 +335,12 @@ class Round {
 
 
 // class holds information about fbx files loaded in from a csv file
-class Fbx {
+class Fbx<T> {
     private ArrayList<FBXAttribute> attributes; // list of attributes the file contains
     private double actualMemory; // actual memory the file uses
 
 
-    public Fbx(String name, Object value) {
+    public Fbx(String name, T value) {
         attributes = new ArrayList<>();
         attributes.add(new FBXAttribute(name, value));
         actualMemory = 0;
@@ -352,7 +352,7 @@ class Fbx {
         private String name;
         private Object value;
 
-        private FBXAttribute(String n, Object v) {
+        private FBXAttribute(String n, T v) {
             name = n;
             value = v;
             if (name.compareTo("Actual memory") == 0) {
@@ -363,7 +363,7 @@ class Fbx {
 
 
     // adds a new attribute to the fbx file
-    public void addAttribute(String name, Object value) {
+    public void addAttribute(String name, T value) {
         attributes.add(new FBXAttribute(name, value));
     }
 
